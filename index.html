@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selvia Maharani | Academic Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="theme-day">
+
+    <div id="cursor-follower"></div>
+
+    <div class="fixed-ui">
+        <button class="glass-btn" onclick="toggleTheme()">🎭 MODE</button>
+        <button class="glass-btn" id="music-btn" onclick="toggleMusic()">🎵 AUDIO: OFF</button>
+    </div>
+
+    <div id="base-layer">
+        <img src="https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=1500" class="painting-img">
+    </div>
+
+    <canvas id="scrubCanvas"></canvas>
+
+    <div id="interaction-layer">
+        <div class="spot neon-pink" onclick="enterRoom('profile')">
+            <i class="fas fa-user-graduate"></i>
+            <span class="label">PROFILE</span>
+        </div>
+        <div class="spot neon-green" onclick="enterRoom('karya')">
+            <i class="fas fa-tools"></i>
+            <span class="label">KARYA</span>
+        </div>
+        <div class="spot neon-blue" onclick="enterRoom('hubungi')">
+            <i class="fas fa-envelope-open-text"></i>
+            <span class="label">CONTACT</span>
+        </div>
+    </div>
+
+    <div id="interior-portal">
+        <div class="building-texture"></div>
+        <div class="color-overlay"></div>
+        
+        <button class="btn-exit-global" onclick="exitRoom()">🚪 KELUAR KE GALERI</button>
+        
+        <div class="container">
+            
+            <div id="info-profile" class="room hidden room-rose">
+                <h1 class="modern-title animate-text">Identity</h1>
+                <div class="luxury-profile-container animate-card">
+                    <div class="profile-layout">
+                        <div class="profile-visual">
+                            <div class="photo-frame">
+                                <img src="ak.jpg" alt="Selvia Maharani">
+                                <div class="frame-border"></div>
+                            </div>
+                        </div>
+                        <div class="profile-details">
+                            <div class="badge">PORTFOLIO</div>
+                            <h2 class="sophia-name">SELVIA <br> <span class="gold-text">MAHARANI</span></h2>
+                            <div class="elegant-line"></div>
+                            <div class="bio-grid">
+                                <div class="bio-item">
+                                    <span class="bio-label">UNIVERSITAS</span>
+                                    <span class="bio-value">UNISKA MAB Banjarmasin</span>
+                                </div>
+                                <div class="bio-item">
+                                    <span class="bio-label">PROGRAM STUDI</span>
+                                    <span class="bio-value">Teknik Informatika</span>
+                                </div>
+                            </div>
+                            <p class="sophia-quote">
+                                "I feel like the possibilities of all those possibilities is just another possibility that can possibly happen."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="info-karya" class="room hidden">
+    <h1 class="modern-title animate-text">Masterpieces</h1>
+    <div class="art-gallery-slider animate-card">
+        <div class="art-item">
+            <div class="art-frame">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=500" alt="Web Canvas">
+                <div class="art-shimmer"></div>
+            </div>
+            <div class="art-info">
+                <h3>Interactive Web Canvas</h3>
+                <p>Eksperimen masking digital menggunakan manipulasi pixel real-time.</p>
+                <span class="art-tag">UI/UX DESIGN</span>
+            </div>
+        </div>
+
+        <div class="art-item">
+            <div class="art-frame">
+                <img src="https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=500" alt="C++ Development">
+                <div class="art-shimmer"></div>
+            </div>
+            <div class="art-info">
+                <h3>Student Identity System</h3>
+                <p>Implementasi logika dasar I/O dan struktur data menggunakan bahasa C++.</p>
+                <span class="art-tag">C++ DEVELOPMENT</span>
+            </div>
+        </div>
+
+        <div class="art-item">
+            <div class="art-frame">
+                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=500" alt="Algorithm">
+                <div class="art-shimmer"></div>
+            </div>
+            <div class="art-info">
+                <h3>Cinema Ticketing Engine</h3>
+                <p>Sistem manajemen tiket bioskop dengan algoritma percabangan & diskon.</p>
+                <span class="art-tag">C++ ALGORITHM</span>
+            </div>
+        </div>
+
+        <div class="art-item">
+            <div class="art-frame">
+                <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=500" alt="Python MySQL">
+                <div class="art-shimmer"></div>
+            </div>
+            <div class="art-info">
+                <h3>Academic CRUD System</h3>
+                <p>Aplikasi desktop manajemen data mahasiswa berbasis PyQt5 & MySQL.</p>
+                <span class="art-tag">PYTHON & MYSQL</span>
+            </div>
+        </div>
+
+        <div class="art-item">
+            <div class="art-frame">
+                <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=500" alt="Delphi Development">
+                <div class="art-shimmer"></div>
+            </div>
+            <div class="art-info">
+                <h3>Apartment Manager</h3>
+                <p>Sistem informasi fasilitas apartemen berbasis Delphi 12 & MySQL.</p>
+                <span class="art-tag">DELPHI 12 & MYSQL</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+            <div id="info-hubungi" class="room hidden room-royal">
+                <h1 class="modern-title animate-text">Contact</h1>
+                <div class="luxury-card contact-card animate-card">
+                    <p class="contact-intro">Silakan tinggalkan pesan kamu di sini.</p>
+                    <form class="contact-form" id="contactForm">
+                        <input type="text" placeholder="Nama Lengkap" required>
+                        <input type="email" placeholder="Email Anda" required>
+                        <textarea placeholder="Tulis pesan Anda..." rows="5" required></textarea>
+                        <button type="submit" class="send-btn">KIRIM PESAN</button>
+                    </form>
+                    <div class="contact-footer">
+                        <a href="https://www.instagram.com/sselviiay_?igsh=MWprZDE1ODN6Y2dqMQ==" target="_blank" class="footer-link">
+                            <i class="fab fa-instagram"></i> @sselviiay_
+                        </a>
+                        
+                        <a href="mailto:selviamaharani41@gmail.com" target="_blank" class="footer-link">
+                            <i class="fas fa-envelope"></i> @selviamaharani41
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div> </div> <audio id="bgm" loop preload="auto">
+        <source src="https://www.bensound.com/bensound-music/bensound-memories.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
